@@ -1,0 +1,11 @@
+{% extends "master.html" %} {% block content %}
+{% load widget_tweaks %}
+<div><h1>Page Voitures</h1></div>
+<form action="/voitures/" method="POST">
+    {% for field in form %}
+        {{field.label}}
+        {% render_field field class="form-control" %}
+    {% endfor %}
+    <input type="submit" value="Soumettre" class="btn btn-primary">
+</form>
+{% endblock content %}
